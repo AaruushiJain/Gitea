@@ -1,0 +1,18 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Initialize Repository";
+}
+
+<div class="card shadow p-4">
+    <h3 class="mb-3">Initialize Repository</h3>
+    <form method="post" action="/Init/Initialize">
+        <button type="submit" class="btn btn-primary">Initialize</button>
+    </form>
+
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-info mt-3">
+            @ViewBag.Message
+        </div>
+    }
+</div>

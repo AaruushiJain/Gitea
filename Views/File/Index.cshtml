@@ -1,0 +1,22 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Cat File";
+}
+
+<div class="card shadow p-4">
+    <h3 class="mb-3">View File by Hash</h3>
+    <form method="post" action="/File/CatFile">
+        <div class="mb-3">
+            <label for="hash" class="form-label">Enter file hash:</label>
+            <input type="text" id="hash" name="hash" class="form-control" placeholder="Enter hash..." required />
+        </div>
+        <button type="submit" class="btn btn-primary">View File</button>
+    </form>
+
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-secondary mt-3" style="white-space: pre-wrap;">
+            @ViewBag.Message
+        </div>
+    }
+</div>

@@ -1,0 +1,22 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Hash Object";
+}
+
+<div class="card shadow p-4">
+    <h3 class="mb-3">Hash and Store Object</h3>
+    <form method="post" enctype="multipart/form-data" action="/Object/HashObject">
+        <div class="mb-3">
+            <label for="file" class="form-label">Select file to hash:</label>
+            <input type="file" id="file" name="file" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-success">Generate Hash</button>
+    </form>
+
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-info mt-3">
+            @ViewBag.Message
+        </div>
+    }
+</div>
